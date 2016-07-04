@@ -10,8 +10,18 @@
 
 #include  <gol.h>
 
+static
+int       out_of_bounds(int x)
+{
+  if ((x < 0) || (x > 31))
+    return (1);
+  return (0);
+}
+
 int       cell_state(uint32_t *world, int x, int y)
 {
+  if (out_of_bounds(x) || out_of_bounds(y))
+    return (CHAR_DEAD);
   if (world[y] & BIT(x))
     return (CHAR_ALIVE);
   return (CHAR_DEAD);

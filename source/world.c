@@ -10,6 +10,7 @@
 
 #include    <gol.h>
 #include    <stdint.h>
+#include    <string.h>
 
 void        next_gen(uint32_t *world)
 {
@@ -33,4 +34,29 @@ void        next_gen(uint32_t *world)
         }
       ++iy;
     }
+  memcpy(world, buf, 32);
+}
+
+int         neighbour_count(uint32_t *world, int x, int y)
+{
+  int count;
+
+  count = 0;
+  if (cell_state(world, x - 1, y - 1) == CHAR_ALIVE)
+      ++count;
+  if (cell_state(world, x, y - 1) == CHAR_ALIVE)
+      ++count;
+  if (cell_state(world, x + 1, y - 1) == CHAR_ALIVE)
+      ++count;
+  if (cell_state(world, x - 1, y) == CHAR_ALIVE)
+      ++count;
+  if (cell_state(world, x + 1, y) == CHAR_ALIVE)
+      ++count;
+  if (cell_state(world, x - 1, y + 1) == CHAR_ALIVE)
+      ++count;
+  if (cell_state(world, x , y + 1) == CHAR_ALIVE)
+      ++count;
+  if (cell_state(world, x + 1, y + 1) == CHAR_ALIVE)
+      ++count;
+  return (count);
 }

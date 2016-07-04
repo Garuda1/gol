@@ -13,6 +13,8 @@
 
 #include  <stdint.h>
 
+#define   RAND_SRC    "/dev/urandom"  /* Change to fit your entropy needs */
+
 #define   CHAR_EXIT   'q'
 #define   CHAR_ALIVE  '#'
 #define   CHAR_DEAD   '*'
@@ -22,6 +24,7 @@
 void      next_gen(uint32_t *world);
 
 void      matrix_clr(uint32_t *matrix);
+void      matrix_randomize(uint32_t *matrix);
 
 int       neighbour_count(uint32_t *world, int x, int y);
 int       cell_state(uint32_t *world, int x, int y);

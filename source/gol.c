@@ -26,7 +26,7 @@ void        game(t_args *args)
 
   generation = 1;
   keep_running = 1;
-  matrix_clr(world);
+  matrix_randomize(world);
   while (keep_running && (generation <= (args -> dump_cycle)))
     {
       next_gen(world);
