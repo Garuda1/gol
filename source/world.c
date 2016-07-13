@@ -34,7 +34,7 @@ void        next_gen(uint32_t *world)
         }
       ++iy;
     }
-  memcpy(world, buf, 32);
+  memcpy(world, buf, 128);
 }
 
 int         neighbour_count(uint32_t *world, int x, int y)
