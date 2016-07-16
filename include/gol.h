@@ -15,6 +15,7 @@
 
 #define   RAND_SRC    "/dev/urandom"  /* Change to fit your entropy needs */
 
+#define   CHAR_RESET  'r'
 #define   CHAR_EXIT   'q'
 #define   CHAR_ALIVE  '#'
 #define   CHAR_DEAD   '*'

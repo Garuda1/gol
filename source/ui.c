@@ -54,5 +54,6 @@ void      print_matrix(uint32_t *matrix)
 void      update_ui(int generation, uint32_t *world)
 {
   print_matrix(world);
-  mvprintw(3, 15, "%d", generation);
+  mvprintw(3, 2, "                 ");
+  mvprintw(3, 2, "Generation: %d", generation);
 }

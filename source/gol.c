@@ -33,6 +33,11 @@ void        game(t_args *args)
       update_ui(generation, world);
       if (getch() == CHAR_EXIT)
         keep_running = 0;
+      else if (getch() == CHAR_RESET)
+        {
+          generation = 0;
+          matrix_randomize(world);
+        }
       ++generation;
     }
   /* dump_matrix(); */
