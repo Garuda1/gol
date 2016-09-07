@@ -19,7 +19,7 @@ int       init(t_args *args)
   return (EXIT_SUCCESS);
 }
 
-void      parse(t_args *args, int argc, char **argv)
+int       parse(t_args *args, int argc, char **argv)
 {
   int     i;
 
@@ -28,8 +28,14 @@ void      parse(t_args *args, int argc, char **argv)
     {
       if (!strcmp(argv[i], "-d") && (i + 1) < argc)
         args -> dump_cycle = atoi(argv[++i]);
+      else
+        {
+          print_syntax();
+          return (EXIT_FAILURE);
+        }
       ++i;
     }
+  return (EXIT_SUCCESS);
 }
 
 void      print_syntax(void)

@@ -48,8 +48,8 @@ int       main(int argc, char **argv)
   t_args  args;
 
   init(&args);
-  parse(&args, argc, argv);
-  if (check(&args) == EXIT_FAILURE)
+  if (parse(&args, argc, argv) == EXIT_FAILURE ||
+      check(&args) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   init_ui();
   game(&args);

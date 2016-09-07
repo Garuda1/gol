@@ -18,7 +18,7 @@ struct    s_args
 };
 
 int       init(t_args *args);
-void      parse(t_args *args, int argc, char **argv);
+int       parse(t_args *args, int argc, char **argv);
 void      print_syntax(void);
 int       check(t_args *args);
 
